@@ -1,9 +1,10 @@
 import { Navbar } from '@/components/Navbar'
 import { Hero } from '@/components/Hero'
-import { BrandMarquee } from '@/components/BrandMarquee'
-import { EditorialGallery } from '@/components/EditorialGallery'
+import { AIMarquee } from '@/components/AIMarquee'
+import { PortfolioSection } from '@/components/PortfolioSection'
+import { PipelineSection } from '@/components/PipelineSection'
 import { StatsSection } from '@/components/StatsSection'
-import { BrandGrid } from '@/components/BrandGrid'
+import { CapabilitiesSection } from '@/components/CapabilitiesSection'
 import { MissionSection } from '@/components/MissionSection'
 import { ContactSection } from '@/components/ContactSection'
 import { Footer } from '@/components/Footer'
@@ -14,10 +15,11 @@ export default function HomePage() {
       <Navbar />
       <main>
         <Hero />
-        <BrandMarquee />
-        <EditorialGallery />
+        <AIMarquee />
+        <PortfolioSection />
         <StatsSection />
-        <BrandGrid />
+        <PipelineSection />
+        <CapabilitiesSection />
         <MissionSection />
         <ContactSection />
       </main>
