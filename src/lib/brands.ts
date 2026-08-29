@@ -9,14 +9,14 @@ export type Brand = {
   category: BrandCategory
   status: 'live' | 'beta' | 'coming-soon'
   accent: string
-  aiFeature: string
+  focus: string
 }
 
 export const categories: { id: BrandCategory | 'all'; label: string }[] = [
-  { id: 'all', label: 'All ventures' },
-  { id: 'legal', label: 'Legal tech' },
-  { id: 'business', label: 'Business ops' },
-  { id: 'coming-soon', label: 'In R&D' },
+  { id: 'all', label: 'All companies' },
+  { id: 'legal', label: 'Legal services' },
+  { id: 'business', label: 'Business operations' },
+  { id: 'coming-soon', label: 'In development' },
 ]
 
 export const brands: Brand[] = [
@@ -25,126 +25,105 @@ export const brands: Brand[] = [
     name: 'CounselCA',
     tagline: "Canada's curated legal directory",
     description:
-      'Verified lawyer discovery with AI-assisted search, practice-area matching, and trust signals built for Canadian legal consumers.',
+      'A verified directory connecting Canadians with lawyers across practice areas — built for trust, discovery, and professional growth.',
     url: 'https://counselca.com',
     category: 'legal',
     status: 'live',
-    accent: '#22d3ee',
-    aiFeature: 'Semantic lawyer matching',
+    accent: '#2dd4bf',
+    focus: 'Legal discovery',
   },
   {
     id: 'lawnest',
     name: 'LawNest',
-    tagline: 'Practice OS for small firms',
+    tagline: 'Practice management for small firms',
     description:
-      'Matters, documents, time, invoicing, and client portals — with AI drafting helpers and intake automation for solo lawyers.',
+      'Everything solo lawyers and small firms need — leads, matters, documents, time tracking, invoicing, and client portals in one calm workspace.',
     url: 'https://lawnest.co',
     category: 'legal',
     status: 'live',
-    accent: '#8b5cf6',
-    aiFeature: 'Document & intake AI',
+    accent: '#d4a853',
+    focus: 'Practice operations',
   },
   {
     id: 'invoiceflow',
     name: 'InvoiceFlow',
-    tagline: 'Smart invoicing for SMBs',
+    tagline: 'Invoicing for freelancers & SMBs',
     description:
-      'Polished invoices, payment tracking, and client management — with AI line-item suggestions and cash-flow insights.',
+      'Create polished invoices and estimates, track payments, and manage clients — without the complexity of enterprise accounting software.',
     url: null,
     category: 'business',
     status: 'beta',
-    accent: '#34d399',
-    aiFeature: 'Predictive billing',
+    accent: '#8b7cf6',
+    focus: 'Business billing',
   },
   {
     id: 'venture-4',
-    name: 'Stealth',
-    tagline: 'Next vertical in discovery',
+    name: 'New venture',
+    tagline: 'Vertical software in discovery',
     description:
-      'Exploring niches where specialized AI workflows can replace spreadsheets and legacy tools for professional services.',
+      'We are actively exploring new verticals where specialized software can replace spreadsheets and legacy tools for professional services.',
     url: null,
     category: 'coming-soon',
     status: 'coming-soon',
-    accent: '#d946ef',
-    aiFeature: 'Agentic workflows',
+    accent: '#c9a87c',
+    focus: 'In evaluation',
+  },
+]
+
+export const industries = [
+  {
+    id: 'legal',
+    name: 'Legal Services',
+    headline: 'Software for lawyers and legal consumers',
+    description:
+      'Purpose-built solutions for law firms, solo practitioners, and Canadians seeking trusted legal counsel — from practice management to verified directory discovery.',
+    brands: ['counselca', 'lawnest'],
+  },
+  {
+    id: 'business',
+    name: 'Business Operations',
+    headline: 'Tools for small business professionals',
+    description:
+      'Streamlined software for invoicing, client management, and day-to-day operations — designed for freelancers and SMBs who need clarity without enterprise overhead.',
+    brands: ['invoiceflow'],
   },
 ]
 
 export const stats = [
-  { value: 3, suffix: '+', label: 'Active ventures' },
-  { value: 2, suffix: '', label: 'Markets served' },
-  { value: 100, suffix: '%', label: 'Founder-led product' },
-  { value: 24, suffix: '/7', label: 'AI-assisted ops' },
+  { value: 3, suffix: '+', label: 'Portfolio companies' },
+  { value: 2, suffix: '', label: 'Industry verticals' },
+  { value: 100, suffix: '%', label: 'Founder-led stewardship' },
+  { value: 1, suffix: '', label: 'Unified mission' },
 ]
 
 export const pillars = [
   {
-    title: 'Vertical depth',
+    title: 'Vertical specialization',
     description:
-      'We go deep on one industry at a time — legal, professional services, SMB ops — not horizontal SaaS that tries to be everything.',
+      'Each company serves a defined professional market — legal services, business operations — with software shaped by real practitioner workflows.',
     metric: '01',
   },
   {
-    title: 'AI-native by default',
+    title: 'Brand independence',
     description:
-      'Every product embeds AI where practitioners actually need it: search, drafting, intake, billing — not bolt-on chatbots.',
+      'Our portfolio companies maintain their own identity and customer relationships. Savitrix provides long-term ownership and shared stewardship.',
     metric: '02',
   },
   {
-    title: 'Long-term ownership',
+    title: 'Enduring ownership',
     description:
-      'Built to compound for years. We nurture brands with operator discipline, not growth-at-all-costs flip logic.',
+      'We build and hold for the long term — nurturing brands with operator discipline, not short-term extraction or growth-at-all-costs logic.',
     metric: '03',
   },
 ]
 
-export const capabilities = [
+export const companyValues = [
   {
-    title: 'Semantic discovery',
-    description: 'Vector search and entity matching tuned for regulated professional directories.',
-    icon: 'search',
+    title: 'Our mission',
+    body: 'To simplify and empower professionals whose work supports communities every day — through tailored software that respects the nuance of their industries.',
   },
   {
-    title: 'Document intelligence',
-    description: 'Drafting, extraction, and classification pipelines for legal and business documents.',
-    icon: 'file',
-  },
-  {
-    title: 'Agentic workflows',
-    description: 'Multi-step automations that respect compliance boundaries and human review gates.',
-    icon: 'bot',
-  },
-  {
-    title: 'Embedded analytics',
-    description: 'Operational dashboards with predictive signals — revenue, intake, utilization.',
-    icon: 'chart',
-  },
-]
-
-export const pipelineStages = [
-  {
-    id: 'discover',
-    label: 'Discover',
-    description: 'Map workflows, pain points, and regulatory constraints in target verticals.',
-  },
-  {
-    id: 'design',
-    label: 'Design',
-    description: 'AI-assisted UX, data models, and compliance-aware feature specs.',
-  },
-  {
-    id: 'build',
-    label: 'Build',
-    description: 'Ship fast with modern stack — Next.js, Supabase, edge inference where it matters.',
-  },
-  {
-    id: 'launch',
-    label: 'Launch',
-    description: 'Go-to-market with niche positioning, not generic horizontal messaging.',
-  },
-  {
-    id: 'iterate',
-    label: 'Iterate',
-    description: 'Closed-loop feedback from operators; continuous model and product refinement.',
+    title: 'Our purpose',
+    body: 'Savitrix exists to acquire, build, and steward software brands that practitioners trust — compounding value for customers, teams, and partners over years.',
   },
 ]

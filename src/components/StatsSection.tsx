@@ -24,19 +24,19 @@ function AnimatedStat({ value, suffix, label }: { value: number; suffix: string;
 
   return (
     <div ref={ref} className="text-center">
-      <div className="font-display text-4xl font-bold text-gradient-cyan md:text-5xl">
+      <div className="font-display text-4xl font-light text-gold-light md:text-5xl">
         {count}
         {suffix}
       </div>
-      <p className="mt-2 font-mono text-[11px] uppercase tracking-wider text-muted">{label}</p>
+      <p className="mt-3 text-[11px] uppercase tracking-[0.15em] text-muted">{label}</p>
     </div>
   )
 }
 
 export function StatsSection() {
   return (
-    <section className="border-y border-cyan/10 bg-deep/30 px-6 py-20">
-      <div className="mx-auto grid max-w-4xl grid-cols-2 gap-10 md:grid-cols-4">
+    <section className="border-y border-gold/10 bg-deep/40 px-6 py-20">
+      <div className="mx-auto grid max-w-4xl grid-cols-2 gap-12 md:grid-cols-4">
         {stats.map((stat, i) => (
           <motion.div
             key={stat.label}

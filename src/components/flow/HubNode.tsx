@@ -11,8 +11,8 @@ export type HubNodeData = {
 function HubNodeComponent({ selected }: NodeProps & { data: HubNodeData }) {
   return (
     <div
-      className={`relative flex h-28 w-28 flex-col items-center justify-center rounded-2xl glass-panel transition-all ${
-        selected ? 'glow-cyan' : ''
+      className={`relative flex h-28 w-28 flex-col items-center justify-center rounded-sm glass-panel transition-all ${
+        selected ? 'glow-gold' : ''
       }`}
     >
       <Handle type="target" position={Position.Top} className="!opacity-0" />
@@ -20,16 +20,16 @@ function HubNodeComponent({ selected }: NodeProps & { data: HubNodeData }) {
       <Handle type="source" position={Position.Left} className="!opacity-0" id="left" />
       <Handle type="source" position={Position.Right} className="!opacity-0" id="right" />
 
-      <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-cyan/10 via-violet/5 to-transparent" />
+      <div className="absolute inset-0 rounded-sm bg-gradient-to-br from-gold/10 to-transparent" />
 
-      <span className="relative font-display text-3xl font-bold text-gradient-cyan">S</span>
-      <span className="relative mt-1 font-mono text-[9px] uppercase tracking-[0.25em] text-cyan/70">
+      <span className="relative font-display text-3xl font-semibold text-gold-light">S</span>
+      <span className="relative mt-1 text-[9px] uppercase tracking-[0.25em] text-gold/60">
         Savitrix
       </span>
 
       {!selected && (
-        <span className="absolute -bottom-6 whitespace-nowrap font-mono text-[9px] text-subtle">
-          portfolio hub
+        <span className="absolute -bottom-6 whitespace-nowrap text-[9px] uppercase tracking-wider text-subtle">
+          Parent co.
         </span>
       )}
     </div>

@@ -20,33 +20,34 @@ const contacts = [
 
 export function ContactSection() {
   return (
-    <section id="contact" className="border-t border-cyan/5 px-6 py-24 md:py-32">
+    <section id="contact" className="border-t border-gold/5 px-6 py-24 md:py-32">
       <div className="mx-auto max-w-6xl">
-        <div className="grid gap-12 lg:grid-cols-2">
+        <div className="grid gap-16 lg:grid-cols-2">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
             <p className="section-label">Contact</p>
-            <h2 className="mt-3 font-display text-3xl font-bold tracking-tight md:text-4xl">
-              Let&apos;s build something niche
+            <h2 className="mt-4 font-display text-3xl font-light tracking-tight md:text-5xl">
+              Inquiries & partnerships
             </h2>
-            <p className="mt-4 max-w-md text-muted">
-              Interested in partnering, acquiring, or joining our portfolio? We&apos;re always open
-              to conversations with operators who share our long-term mindset.
+            <p className="mt-5 max-w-md font-light leading-relaxed text-muted">
+              For partnership discussions, acquisitions, or general inquiries about Savitrix Limited
+              and our portfolio — we welcome thoughtful conversations with aligned operators and
+              investors.
             </p>
 
-            <div className="mt-8 space-y-4">
+            <div className="mt-10 space-y-6">
               {contacts.map((item) => (
                 <div key={item.label} className="flex items-center gap-4">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-cyan/10 text-cyan">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-sm border border-gold/15 bg-gold/5 text-gold">
                     <item.icon className="h-4 w-4" />
                   </div>
                   <div>
-                    <p className="font-mono text-[10px] uppercase tracking-wider text-subtle">{item.label}</p>
+                    <p className="text-[10px] uppercase tracking-[0.2em] text-subtle">{item.label}</p>
                     {item.href ? (
-                      <a href={item.href} className="text-sm text-foreground hover:text-cyan">
+                      <a href={item.href} className="text-sm text-foreground hover:text-gold">
                         {item.value}
                       </a>
                     ) : (
@@ -63,16 +64,17 @@ export function ContactSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="rounded-2xl glass-panel p-8 glow-cyan"
+            className="rounded-sm glass-panel p-10 glow-gold"
           >
-            <h3 className="text-lg font-semibold">Partner with Savitrix</h3>
-            <p className="mt-2 text-sm text-muted">
-              Whether you&apos;re a founder looking for a long-term home, an investor aligned with
-              vertical SaaS, or a practitioner with product ideas — reach out.
+            <h3 className="font-display text-2xl font-medium">Partner with Savitrix</h3>
+            <p className="mt-4 font-light leading-relaxed text-muted">
+              Whether you are a founder seeking a long-term home for your software business, an
+              investor aligned with vertical SaaS, or a professional with a product vision — we
+              are open to a conversation.
             </p>
             <a
               href="mailto:savitrixlimited@gmail.com?subject=Partnership%20inquiry"
-              className="mt-6 inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-cyan to-blue px-5 py-3 text-sm font-semibold text-void transition-transform hover:scale-[1.02]"
+              className="mt-8 inline-flex items-center gap-2 rounded-sm bg-gold px-6 py-3.5 text-sm font-medium tracking-wide text-void transition-opacity hover:opacity-90"
             >
               Send an inquiry
               <ArrowUpRight className="h-4 w-4" />

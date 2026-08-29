@@ -5,7 +5,7 @@ import { PortfolioFlow } from './PortfolioFlow'
 
 export function PortfolioSection() {
   return (
-    <section id="portfolio" className="px-6 py-24 md:py-32">
+    <section id="companies" className="px-6 py-24 md:py-32">
       <div className="mx-auto max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -14,13 +14,15 @@ export function PortfolioSection() {
           transition={{ duration: 0.5 }}
           className="mb-12 max-w-2xl"
         >
-          <p className="section-label">Portfolio graph</p>
-          <h2 className="mt-3 font-display text-3xl font-bold tracking-tight md:text-4xl">
-            Interactive venture ecosystem
+          <p className="section-label">Portfolio companies</p>
+          <h2 className="mt-4 font-display text-3xl font-light tracking-tight md:text-5xl">
+            Best-in-class software,
+            <span className="italic text-gold-light"> each with its own identity</span>
           </h2>
-          <p className="mt-4 text-muted">
-            Click any node to expand details. Each product under the Savitrix umbrella ships with
-            AI capabilities tuned to its vertical — not generic horizontal features.
+          <p className="mt-5 font-light leading-relaxed text-muted">
+            Like any great parent company, Savitrix holds a portfolio of operating brands. Customers
+            engage with CounselCA, LawNest, and our other companies directly — we provide the
+            long-term foundation behind them.
           </p>
         </motion.div>
 
@@ -31,8 +33,8 @@ export function PortfolioSection() {
           transition={{ duration: 0.6, delay: 0.1 }}
         >
           <PortfolioFlow />
-          <p className="mt-4 text-center font-mono text-[10px] text-subtle">
-            Drag to pan · scroll to zoom · click nodes for details
+          <p className="mt-5 text-center text-[11px] uppercase tracking-wider text-subtle">
+            Select a company to view details
           </p>
         </motion.div>
       </div>

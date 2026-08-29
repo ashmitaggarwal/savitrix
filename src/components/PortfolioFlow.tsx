@@ -37,7 +37,7 @@ export function PortfolioFlow() {
         id: 'hub',
         type: 'hub',
         position: { x: 0, y: 0 },
-        data: { label: 'Savitrix', sublabel: 'portfolio hub' } satisfies HubNodeData,
+        data: { label: 'Savitrix', sublabel: 'Parent company' } satisfies HubNodeData,
         draggable: false,
       },
       ...brands.map((brand) => ({
@@ -50,7 +50,7 @@ export function PortfolioFlow() {
           description: brand.description,
           accent: brand.accent,
           status: brand.status,
-          aiFeature: brand.aiFeature,
+          focus: brand.focus,
           url: brand.url,
         } satisfies BrandNodeData,
       })),
@@ -65,8 +65,8 @@ export function PortfolioFlow() {
         source: 'hub',
         target: brand.id,
         animated: true,
-        style: { stroke: brand.accent, strokeWidth: 1.5, opacity: 0.5 },
-        markerEnd: { type: MarkerType.ArrowClosed, color: brand.accent, width: 16, height: 16 },
+        style: { stroke: '#d4a853', strokeWidth: 1.5, opacity: 0.4 },
+        markerEnd: { type: MarkerType.ArrowClosed, color: '#d4a853', width: 16, height: 16 },
       })),
     [],
   )
@@ -74,15 +74,12 @@ export function PortfolioFlow() {
   const [nodes, , onNodesChange] = useNodesState(initialNodes)
   const [edges, , onEdgesChange] = useEdgesState(initialEdges)
 
-  const onNodeClick = useCallback(
-    (_: React.MouseEvent, node: Node) => {
-      if (node.id === 'hub') return
-    },
-    [],
-  )
+  const onNodeClick = useCallback((_: React.MouseEvent, node: Node) => {
+    if (node.id === 'hub') return
+  }, [])
 
   return (
-    <div className="h-[520px] w-full rounded-2xl border border-cyan/10 bg-deep/50 md:h-[560px]">
+    <div className="h-[520px] w-full rounded-sm border border-gold/10 bg-deep/40 md:h-[560px]">
       <ReactFlow
         nodes={nodes}
         edges={edges}
@@ -95,14 +92,14 @@ export function PortfolioFlow() {
         minZoom={0.5}
         maxZoom={1.5}
         proOptions={{ hideAttribution: true }}
-        className="rounded-2xl"
+        className="rounded-sm"
       >
-        <Background variant={BackgroundVariant.Dots} gap={20} size={1} color="rgba(34,211,238,0.08)" />
+        <Background variant={BackgroundVariant.Dots} gap={24} size={1} color="rgba(212,168,83,0.06)" />
         <Controls showInteractive={false} />
         <MiniMap
-          nodeColor={(n) => (n.type === 'hub' ? '#22d3ee' : '#8b5cf6')}
-          maskColor="rgba(2, 6, 23, 0.8)"
-          className="!rounded-lg !border !border-cyan/10 !bg-panel/90"
+          nodeColor={(n) => (n.type === 'hub' ? '#d4a853' : '#8b8fa3')}
+          maskColor="rgba(5, 6, 8, 0.85)"
+          className="!rounded-sm !border !border-gold/10 !bg-panel/90"
         />
       </ReactFlow>
     </div>

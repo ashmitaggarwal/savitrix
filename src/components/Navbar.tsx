@@ -5,10 +5,9 @@ import { motion } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 
 const links = [
-  { href: '#portfolio', label: 'Portfolio' },
-  { href: '#pipeline', label: 'Pipeline' },
-  { href: '#capabilities', label: 'AI Stack' },
-  { href: '#mission', label: 'Mission' },
+  { href: '#companies', label: 'Companies' },
+  { href: '#industries', label: 'Industries' },
+  { href: '#about', label: 'About' },
   { href: '#contact', label: 'Contact' },
 ]
 
@@ -25,26 +24,29 @@ export function Navbar() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        scrolled ? 'border-b border-cyan/10 bg-void/80 backdrop-blur-xl' : 'bg-transparent'
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
+        scrolled ? 'border-b border-gold/10 bg-void/90 backdrop-blur-xl' : 'bg-transparent'
       }`}
     >
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <a href="#" className="group flex items-center gap-2.5">
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-cyan/20 to-violet/20 text-sm font-bold text-cyan ring-1 ring-cyan/30">
+      <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
+        <a href="#" className="group flex items-center gap-3">
+          <span className="flex h-9 w-9 items-center justify-center rounded-sm border border-gold/25 bg-gold/5 font-display text-lg font-semibold text-gold">
             S
           </span>
-          <span className="font-display text-lg font-semibold tracking-tight text-foreground">
-            Savitrix
-          </span>
+          <div className="text-left">
+            <span className="block font-display text-lg font-medium tracking-tight text-foreground">
+              Savitrix
+            </span>
+            <span className="block text-[10px] uppercase tracking-[0.2em] text-gold/50">Limited</span>
+          </div>
         </a>
 
-        <ul className="hidden items-center gap-8 md:flex">
+        <ul className="hidden items-center gap-10 md:flex">
           {links.map((link) => (
             <li key={link.href}>
               <a
                 href={link.href}
-                className="font-mono text-[11px] uppercase tracking-wider text-muted transition-colors hover:text-cyan"
+                className="text-[11px] font-medium uppercase tracking-[0.15em] text-muted transition-colors hover:text-gold"
               >
                 {link.label}
               </a>
@@ -54,14 +56,14 @@ export function Navbar() {
 
         <a
           href="#contact"
-          className="hidden rounded-lg bg-gradient-to-r from-cyan/20 to-violet/20 px-4 py-2 font-mono text-[11px] uppercase tracking-wider text-cyan ring-1 ring-cyan/25 transition-all hover:from-cyan/30 hover:to-violet/30 md:inline-block"
+          className="hidden rounded-sm border border-gold/25 px-5 py-2.5 text-[11px] font-medium uppercase tracking-[0.12em] text-gold transition-colors hover:bg-gold/5 md:inline-block"
         >
           Partner with us
         </a>
 
         <button
           type="button"
-          className="rounded-lg p-2 text-muted md:hidden"
+          className="rounded-sm p-2 text-muted md:hidden"
           onClick={() => setOpen(!open)}
           aria-label={open ? 'Close menu' : 'Open menu'}
         >
@@ -73,14 +75,14 @@ export function Navbar() {
         <motion.div
           initial={{ opacity: 0, y: -8 }}
           animate={{ opacity: 1, y: 0 }}
-          className="border-b border-cyan/10 bg-void/95 px-6 py-4 backdrop-blur-xl md:hidden"
+          className="border-b border-gold/10 bg-void/95 px-6 py-6 backdrop-blur-xl md:hidden"
         >
-          <ul className="flex flex-col gap-4">
+          <ul className="flex flex-col gap-5">
             {links.map((link) => (
               <li key={link.href}>
                 <a
                   href={link.href}
-                  className="font-mono text-xs uppercase tracking-wider text-muted"
+                  className="text-xs font-medium uppercase tracking-wider text-muted"
                   onClick={() => setOpen(false)}
                 >
                   {link.label}
