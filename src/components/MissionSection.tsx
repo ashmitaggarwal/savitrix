@@ -27,7 +27,7 @@ export function MissionSection() {
 
             <div className="mt-10 space-y-6">
               {companyValues.map((item) => (
-                <div key={item.title} className="rounded-sm glass-panel p-6">
+                <div key={item.title} className="modern-card p-6">
                   <h3 className="text-[11px] font-medium uppercase tracking-[0.2em] text-gold/70">
                     {item.title}
                   </h3>
@@ -36,7 +36,7 @@ export function MissionSection() {
               ))}
             </div>
 
-            <div className="mt-8 rounded-sm glass-panel p-6">
+            <div className="modern-card mt-8 p-6">
               <p className="font-light leading-relaxed text-muted">
                 Our operating companies include{' '}
                 <a href="https://counselca.com" className="text-gold hover:underline" target="_blank" rel="noopener noreferrer">
@@ -60,7 +60,7 @@ export function MissionSection() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="rounded-sm glass-panel p-7 transition-colors hover:border-gold/20"
+                className="modern-card p-7"
               >
                 <div className="flex items-start gap-5">
                   <span className="font-display text-3xl font-light text-gold/25">{pillar.metric}</span>

@@ -25,7 +25,7 @@ export function IndustriesSection() {
           </p>
         </motion.div>
 
-        <div className="grid gap-8 lg:grid-cols-2">
+        <div className="grid gap-5 lg:grid-cols-12 lg:grid-rows-2 lg:gap-5">
           {industries.map((industry, i) => {
             const industryBrands = brands.filter((b) => industry.brands.includes(b.id))
             return (
@@ -35,7 +35,9 @@ export function IndustriesSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="rounded-sm glass-panel p-8 transition-colors hover:border-gold/25"
+                className={`modern-card p-8 lg:p-10 ${
+                  i === 0 ? 'lg:col-span-7 lg:row-span-2' : 'lg:col-span-5 lg:row-span-2'
+                }`}
               >
                 <p className="section-label">{industry.name}</p>
                 <h3 className="mt-3 font-display text-2xl font-medium text-foreground">

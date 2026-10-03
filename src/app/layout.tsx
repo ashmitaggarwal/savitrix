@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import { Cormorant, Montserrat } from 'next/font/google'
-import { AmbientBackground } from '@/components/AmbientBackground'
-import { ScrollProgress } from '@/components/ScrollProgress'
+import { SceneRoot } from '@/components/SceneRoot'
 import './globals.css'
 
 const cormorant = Cormorant({
@@ -57,8 +56,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${cormorant.variable} ${montserrat.variable}`}>
       <body className="min-h-screen overflow-x-hidden">
-        <AmbientBackground />
-        <ScrollProgress />
+        <SceneRoot />
         {children}
       </body>
     </html>

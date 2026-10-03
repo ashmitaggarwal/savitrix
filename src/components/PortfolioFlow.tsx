@@ -79,7 +79,7 @@ export function PortfolioFlow() {
   }, [])
 
   return (
-    <div className="h-[520px] w-full rounded-sm border border-gold/10 bg-deep/40 md:h-[560px]">
+    <div className="modern-card h-[520px] w-full overflow-hidden md:h-[560px]">
       <ReactFlow
         nodes={nodes}
         edges={edges}

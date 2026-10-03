@@ -25,12 +25,14 @@ export function Navbar() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
-        scrolled ? 'border-b border-gold/10 bg-void/90 backdrop-blur-xl' : 'bg-transparent'
+        scrolled
+          ? 'border-b border-gold/10 bg-void/75 backdrop-blur-2xl shadow-[0_8px_32px_rgba(0,0,0,0.35)]'
+          : 'bg-transparent'
       }`}
     >
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
         <a href="#" className="group flex items-center gap-3">
-          <span className="flex h-9 w-9 items-center justify-center rounded-sm border border-gold/25 bg-gold/5 font-display text-lg font-semibold text-gold">
+          <span className="flex h-9 w-9 items-center justify-center rounded-xl border border-gold/25 bg-gold/5 font-display text-lg font-semibold text-gold shadow-[0_0_24px_rgba(212,168,83,0.12)]">
             S
           </span>
           <div className="text-left">

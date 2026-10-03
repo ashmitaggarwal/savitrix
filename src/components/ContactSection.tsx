@@ -64,7 +64,7 @@ export function ContactSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="rounded-sm glass-panel p-10 glow-gold"
+            className="modern-card p-10 glow-gold"
           >
             <h3 className="font-display text-2xl font-medium">Partner with Savitrix</h3>
             <p className="mt-4 font-light leading-relaxed text-muted">

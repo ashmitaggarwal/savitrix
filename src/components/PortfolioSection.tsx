@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { BrandCardsGrid } from './BrandCardsGrid'
 import { PortfolioFlow } from './PortfolioFlow'
 
 export function PortfolioSection() {
@@ -26,15 +27,19 @@ export function PortfolioSection() {
           </p>
         </motion.div>
 
+        <BrandCardsGrid />
+
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-40px' }}
           transition={{ duration: 0.6, delay: 0.1 }}
+          className="mt-16"
         >
+          <p className="mb-6 section-label">Interactive map</p>
           <PortfolioFlow />
           <p className="mt-5 text-center text-[11px] uppercase tracking-wider text-subtle">
-            Select a company to view details
+            Drag to explore · Select a company for details
           </p>
         </motion.div>
       </div>
